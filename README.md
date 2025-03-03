@@ -24,10 +24,9 @@ This is my **personal portfolio** showcasing my **UI/UX design** and **frontend 
 
 
 📬 Contact
+
 💡 Want to collaborate? Let's connect!
 
-📧 Email: sidiqbimop@gmail.com
-
-🌐 Portfolio: https://hellobimo.vercel.app/
-
-🔗 LinkedIn: https://www.linkedin.com/in/sidiqbimo/
+- 📧 Email: sidiqbimop@gmail.com
+- 🌐 Portfolio: https://hellobimo.vercel.app/
+- 🔗 LinkedIn: https://www.linkedin.com/in/sidiqbimo/
