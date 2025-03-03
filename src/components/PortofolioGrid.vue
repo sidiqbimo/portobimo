@@ -12,22 +12,22 @@ const projects = [
   {
     imageSrc: "https://placehold.co/519x390",
     title: "Jogja Istimewa",
-    category: "Mobile Dev.",
-    categoryIcon: "mdi:cellphone",
+    category: "UI/UX Design",
+    categoryIcon: "mdi:palette",
     description: "Tourism, public services, and city updates, all in one smart app for locals and visitors.",
   },
   {
     imageSrc: "https://placehold.co/519x390",
     title: "Setara Banking",
-    category: "UI/UX Design",
-    categoryIcon: "mdi:palette",
+    category: "Mobile Dev.",
+    categoryIcon: "mdi:cellphone",
     description: "Banking without barriers—an inclusive digital experience for everyone, by design.",
   },
   {
     imageSrc: "https://placehold.co/519x390",
     title: "BeMySample",
-    category: "Mobile Dev.",
-    categoryIcon: "mdi:cellphone",
+    category: "UI/UX Design",
+    categoryIcon: "mdi:palette",
     description: "Bridging researchers and respondents in a new way—survey has never been this easy.",
   },
   {
@@ -40,8 +40,8 @@ const projects = [
   {
     imageSrc: "https://placehold.co/519x390",
     title: "Electree",
-    category: "Mobile Dev.",
-    categoryIcon: "mdi:cellphone",
+    category: "UI/UX Design",
+    categoryIcon: "mdi:palette",
     description: "Smarter power grid issue reporting with AI and community-driven data.",
   },
 ];
