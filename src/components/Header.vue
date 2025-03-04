@@ -49,8 +49,8 @@ onUnmounted(() => {
     <!-- Right: Desktop Navigation (Hidden on Mobile) -->
     <nav class="hidden md:flex gap-8">
       <a href="#about" class="text-[#A9C46C] text-base font-bold underline hover:font-extrabold duration-300 ease-in-out">ABOUT ME</a>
-      <a href="#contact" class="text-[#A9C46C] text-base font-bold underline hover:font-extrabold duration-300 ease-in-out">CONTACT</a>
-      <a href="#resume" class="text-[#5D8736] text-base font-bold underline hover:font-extrabold transition-all">MY RESUME</a>
+      <a href="mailto:sidiqbimop@gmail.com" class="text-[#A9C46C] text-base font-bold underline hover:font-extrabold duration-300 ease-in-out">CONTACT</a>
+      <a href="https://drive.google.com/file/d/1EoECKlZepn9ImgItemapVRGBzPHGY4Nb/view?usp=sharing" class="text-[#5D8736] text-base font-bold underline hover:font-extrabold transition-all">MY RESUME</a>
     </nav>
 
     <!-- Mobile Menu Button (Visible on Small Screens) -->

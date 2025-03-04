@@ -1,44 +1,50 @@
 <script setup>
 import PortfolioCard from "./PortofolioCard.vue";
+const grid1 = "/images/famcare.png";
+const grid2 = "/images/jogjis.png";
+const grid3 = "/images/setara.png";
+const grid4 = "/images/bemysample.png";
+const grid5 = "/images/surveyscout.png";
+const grid6 = "/images/electree.png";
 
 const projects = [
   {
-    imageSrc: "https://placehold.co/519x390", // Placeholder image
+    imageSrc: grid1, // Placeholder image
     title: "FamCare",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette", // Iconify icon
     description: "Caring made smarter—Real-time health monitoring and emergency alerts, anytime, anywhere.",
   },
   {
-    imageSrc: "https://placehold.co/519x390",
+    imageSrc: grid2,
     title: "Jogja Istimewa",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette",
     description: "Tourism, public services, and city updates, all in one smart app for locals and visitors.",
   },
   {
-    imageSrc: "https://placehold.co/519x390",
+    imageSrc: grid3,
     title: "Setara Banking",
     category: "Mobile Dev.",
     categoryIcon: "mdi:cellphone",
     description: "Banking without barriers—an inclusive digital experience for everyone, by design.",
   },
   {
-    imageSrc: "https://placehold.co/519x390",
+    imageSrc: grid4,
     title: "BeMySample",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette",
     description: "Bridging researchers and respondents in a new way—survey has never been this easy.",
   },
   {
-    imageSrc: "https://placehold.co/519x390",
+    imageSrc: grid5,
     title: "SurveyScout",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette",
     description: "Powering smarter decisions—connecting companies with engaged surveyors for reliable insights.",
   },
   {
-    imageSrc: "https://placehold.co/519x390",
+    imageSrc: grid6,
     title: "Electree",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette",

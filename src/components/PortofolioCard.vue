@@ -15,7 +15,7 @@ defineProps({
   >
     
     <!-- Placeholder Image -->
-    <div class="w-[full] h-[360px] bg-gray-300 rounded-lg overflow-hidden">
+    <div class="w-[full] h-[360px] bg-gray-300 rounded-lg overflow-hidden shadow-md border-2 border-[#A9C46C]">
       <img :src="imageSrc" alt="Project Image" class="w-full h-full object-cover" />
     </div>
 
