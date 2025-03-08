@@ -12,48 +12,55 @@ const projects = [
     imageSrc: grid1, // Placeholder image
     title: "FamCare",
     altText: "Screenshots of FamCare mobile app UI/UX Prototype, showcasing family health features and emergency alerts",
-    category: "UI/UX Design",
-    categoryIcon: "mdi:palette", // Iconify icon
+    categories: [
+      { name: "UI/UX Design", icon: "mdi:palette" },
+    ],
     description: "Caring made smarter—Real-time health monitoring and emergency alerts, anytime, anywhere.",
   },
   {
     imageSrc: grid2,
     title: "Jogja Istimewa",
     altText: "Screenshots of Jogja Istimewa mobile app UI/UX Prototype, showcasing city updates and tourism information",
-    category: "UI/UX Design",
-    categoryIcon: "mdi:palette",
+    categories: [
+      { name: "UI/UX Design", icon: "mdi:palette" },
+    ],
     description: "Tourism, public services, and city updates, all in one smart app for locals and visitors.",
   },
   {
     imageSrc: grid3,
     title: "Setara",
     altText: "Screenshots of Setara mobile app, implementing inclusive design for all users",
-    category: "Mobile Dev.",
-    categoryIcon: "mdi:cellphone",
+    categories: [
+      { name: "Mobile Dev.", icon: "mdi:cellphone" },
+    ],
     description: "Banking without barriers—an inclusive digital experience for everyone, by design.",
   },
   {
     imageSrc: grid4,
     title: "SurveyScout",
     altText: "Screenshots of SurveyScout mobile app UI/UX Prototype, showcasing features for three different user roles",
-    category: "UI/UX Design",
-    categoryIcon: "mdi:palette",
+    categories: [
+      { name: "UI/UX Design", icon: "mdi:palette" },
+    ],
     description: "Powering smarter decisions—connecting companies with engaged surveyors for reliable insights.",
   },
   {
     imageSrc: grid5,
     title: "Asteria",
     altText: "Screenshots of Asteria mobile and desktop UI/UX Prototype, rich landing page information",
-    category: "UI/UX Design",
-    categoryIcon: "mdi:palette",
+    categories: [
+      { name: "UI/UX Design", icon: "mdi:palette" },
+      { name: "Web Dev.", icon: "mdi:web" },
+    ],
     description: "An engaging landing page with compelling visuals and an optimized user journey, driving conversions.",
   },
   {
     imageSrc: grid6,
     title: "BeMySample",
     altText: "Screenshots of BeMySample mobile and desktop UI/UX Prototype, showcasing main features",
-    category: "UI/UX Design",
-    categoryIcon: "mdi:palette",
+    categories: [
+      { name: "UI/UX Design", icon: "mdi:palette" },
+    ],
     description: "AI-powered survey platform connecting researchers with engaged respondents, faster than ever.",
   },
 ];

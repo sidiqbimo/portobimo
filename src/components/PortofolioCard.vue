@@ -4,8 +4,7 @@ defineProps({
   imageSrc: String,
   altText: String,
   title: String,
-  category: String,
-  categoryIcon: String,
+  categories: Array,
   description: String,
 });
 </script>
@@ -25,9 +24,16 @@ defineProps({
       <h2 class="text-[#6B8E23] text-[32px] font-normal" style="font-family: 'Palanquin Dark', sans-serif;">
         {{ title }}
       </h2>
-      <div class="flex items-center bg-[#006C4F] text-white text-base px-2 py-1 rounded-lg">
-        <Icon :icon="categoryIcon" class="w-4 h-4 mr-2" />
-        <span class="font-['Lato']">{{ category }}</span>
+      <div class="flex gap-2">
+        <div 
+          v-for="(category, index) in categories" 
+          :key="index" 
+          
+          class="flex items-center bg-[#006C4F] text-white text-base px-2 py-1 rounded-lg"
+        >
+          <Icon :icon="category.icon" class="w-4 h-4 mr-2" />
+          <span class="font-['Lato']">{{ category.name }}</span>
+        </div>
       </div>
     </div>
 
