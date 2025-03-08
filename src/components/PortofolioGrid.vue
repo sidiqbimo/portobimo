@@ -3,14 +3,15 @@ import PortfolioCard from "./PortofolioCard.vue";
 const grid1 = "/images/famcare.png";
 const grid2 = "/images/jogjis.png";
 const grid3 = "/images/setara.png";
-const grid4 = "/images/bemysample.png";
-const grid5 = "/images/surveyscout.png";
-const grid6 = "/images/electree.png";
+const grid4 = "/images/surveyscout.png";
+const grid5 = "/images/asteria.png";
+const grid6 = "/images/bemysample.png";
 
 const projects = [
   {
     imageSrc: grid1, // Placeholder image
     title: "FamCare",
+    altText: "Screenshots of FamCare mobile app UI/UX Prototype, showcasing family health features and emergency alerts",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette", // Iconify icon
     description: "Caring made smarter—Real-time health monitoring and emergency alerts, anytime, anywhere.",
@@ -18,37 +19,42 @@ const projects = [
   {
     imageSrc: grid2,
     title: "Jogja Istimewa",
+    altText: "Screenshots of Jogja Istimewa mobile app UI/UX Prototype, showcasing city updates and tourism information",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette",
     description: "Tourism, public services, and city updates, all in one smart app for locals and visitors.",
   },
   {
     imageSrc: grid3,
-    title: "Setara Banking",
+    title: "Setara",
+    altText: "Screenshots of Setara mobile app, implementing inclusive design for all users",
     category: "Mobile Dev.",
     categoryIcon: "mdi:cellphone",
     description: "Banking without barriers—an inclusive digital experience for everyone, by design.",
   },
   {
     imageSrc: grid4,
-    title: "BeMySample",
-    category: "UI/UX Design",
-    categoryIcon: "mdi:palette",
-    description: "Bridging researchers and respondents in a new way—survey has never been this easy.",
-  },
-  {
-    imageSrc: grid5,
     title: "SurveyScout",
+    altText: "Screenshots of SurveyScout mobile app UI/UX Prototype, showcasing features for three different user roles",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette",
     description: "Powering smarter decisions—connecting companies with engaged surveyors for reliable insights.",
   },
   {
-    imageSrc: grid6,
-    title: "Electree",
+    imageSrc: grid5,
+    title: "Asteria",
+    altText: "Screenshots of Asteria mobile and desktop UI/UX Prototype, rich landing page information",
     category: "UI/UX Design",
     categoryIcon: "mdi:palette",
-    description: "Smarter power grid issue reporting with AI and community-driven data.",
+    description: "An engaging landing page with compelling visuals and an optimized user journey, driving conversions.",
+  },
+  {
+    imageSrc: grid6,
+    title: "BeMySample",
+    altText: "Screenshots of BeMySample mobile and desktop UI/UX Prototype, showcasing main features",
+    category: "UI/UX Design",
+    categoryIcon: "mdi:palette",
+    description: "AI-powered survey platform connecting researchers with engaged respondents, faster than ever.",
   },
 ];
 </script>
