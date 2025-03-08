@@ -7,13 +7,19 @@ const grid4 = "/images/surveyscout.png";
 const grid5 = "/images/asteria.png";
 const grid6 = "/images/bemysample.png";
 
+const categoryConfig = {
+  mobile: { name: "Mobile Dev.", textColor: "#4C732E", bgColor: "#B8DA97", icon: "mdi:cellphone" },
+  web: { name: "Web Dev.", textColor: "#5A6E2F", bgColor: "#C9E2A8", icon: "mdi:web" },
+  uiux: { name: "UI/UX", textColor: "#5D8736", bgColor: "#D2E6A3", icon: "mdi:palette" },
+};
+
 const projects = [
   {
     imageSrc: grid1, // Placeholder image
     title: "FamCare",
     altText: "Screenshots of FamCare mobile app UI/UX Prototype, showcasing family health features and emergency alerts",
     categories: [
-      { name: "UI/UX Design", icon: "mdi:palette" },
+      categoryConfig.uiux
     ],
     description: "Caring made smarter—Real-time health monitoring and emergency alerts, anytime, anywhere.",
   },
@@ -22,7 +28,7 @@ const projects = [
     title: "Jogja Istimewa",
     altText: "Screenshots of Jogja Istimewa mobile app UI/UX Prototype, showcasing city updates and tourism information",
     categories: [
-      { name: "UI/UX Design", icon: "mdi:palette" },
+      categoryConfig.uiux
     ],
     description: "Tourism, public services, and city updates, all in one smart app for locals and visitors.",
   },
@@ -31,7 +37,7 @@ const projects = [
     title: "Setara",
     altText: "Screenshots of Setara mobile app, implementing inclusive design for all users",
     categories: [
-      { name: "Mobile Dev.", icon: "mdi:cellphone" },
+      categoryConfig.mobile
     ],
     description: "Banking without barriers—an inclusive digital experience for everyone, by design.",
   },
@@ -40,7 +46,7 @@ const projects = [
     title: "SurveyScout",
     altText: "Screenshots of SurveyScout mobile app UI/UX Prototype, showcasing features for three different user roles",
     categories: [
-      { name: "UI/UX Design", icon: "mdi:palette" },
+      categoryConfig.uiux
     ],
     description: "Powering smarter decisions—connecting companies with engaged surveyors for reliable insights.",
   },
@@ -49,8 +55,8 @@ const projects = [
     title: "Asteria",
     altText: "Screenshots of Asteria mobile and desktop UI/UX Prototype, rich landing page information",
     categories: [
-      { name: "UI/UX Design", icon: "mdi:palette" },
-      { name: "Web Dev.", icon: "mdi:web" },
+      categoryConfig.uiux,
+      categoryConfig.web
     ],
     description: "An engaging landing page with compelling visuals and an optimized user journey, driving conversions.",
   },
@@ -59,7 +65,7 @@ const projects = [
     title: "BeMySample",
     altText: "Screenshots of BeMySample mobile and desktop UI/UX Prototype, showcasing main features",
     categories: [
-      { name: "UI/UX Design", icon: "mdi:palette" },
+      categoryConfig.uiux
     ],
     description: "AI-powered survey platform connecting researchers with engaged respondents, faster than ever.",
   },

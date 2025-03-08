@@ -28,8 +28,8 @@ defineProps({
         <div 
           v-for="(category, index) in categories" 
           :key="index" 
-          
-          class="flex items-center bg-[#006C4F] text-white text-base px-2 py-1 rounded-lg"
+          :style = "{ backgroundColor: category.bgColor, color: category.textColor }"
+          class="flex items-center text-base px-2 py-1 rounded-lg"
         >
           <Icon :icon="category.icon" class="w-4 h-4 mr-2" />
           <span class="font-['Lato']">{{ category.name }}</span>
