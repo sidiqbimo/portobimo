@@ -1,9 +1,12 @@
 <script setup>
 import { Icon } from "@iconify/vue"; // Import Iconify for icons
+import { useWaveAnimation } from "../composables/useWaveAnimation";
+
+const { animateButtons } = useWaveAnimation();
 </script>
 
 <template>
-  <section class="flex justify-center items-center px-[54px] pt-8 pb-16">
+  <section id="contact" class="flex justify-center items-center px-[54px] pt-8 pb-16">
     <div class="w-full max-w-[1776px] h-auto px-[72px] py-[80px] bg-transparent rounded-2xl border-container flex flex-col justify-center items-center">
       
       <!-- Title -->
@@ -20,7 +23,7 @@ import { Icon } from "@iconify/vue"; // Import Iconify for icons
       <div class="flex justify-center items-center gap-4 mt-4 mb-24">
         
         <!-- Talk to Bimo Button -->
-        <button class="flex items-center gap-2 px-6 py-4 bg-[#5D8736] rounded-lg hover:bg-[#4C732E] button-hover-effect">
+        <button :class="['flex items-center gap-2 px-6 py-4 rounded-lg button-hover-effect', animateButtons ? 'animate-wave-1 active-wave' : 'bg-[#5D8736] hover:bg-[#4C732E]']">
 
             <a href="mailto:sidiqbimop@gmail.com" class="flex items-center gap-2">
           <Icon icon="mdi:email" class="text-[#E3F89A]" width="32" height="32" />
@@ -33,21 +36,21 @@ import { Icon } from "@iconify/vue"; // Import Iconify for icons
         <div class="flex gap-3">
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/sidiqbimo" target="_blank" rel="noopener noreferrer">
-            <div class="w-16 h-16 flex items-center justify-center bg-[#E3F89A] rounded-lg button-hover-effect hover:bg-[#D2E6A3]">
+            <div :class="['w-16 h-16 flex items-center justify-center rounded-lg button-hover-effect', animateButtons ? 'animate-wave-2 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
             <Icon icon="mdi:linkedin" class="text-[#5D8736]" width="32" height="32" />
             </div>
         </a>
 
         <!-- Dribbble -->
         <a href="https://dribbble.com/sidiqbheem" target="_blank" rel="noopener noreferrer">
-            <div class="w-16 h-16 flex items-center justify-center bg-[#E3F89A] rounded-lg button-hover-effect hover:bg-[#D2E6A3]">
+            <div :class="['w-16 h-16 flex items-center justify-center rounded-lg button-hover-effect', animateButtons ? 'animate-wave-3 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
             <Icon icon="icon-park-solid:dribble" class="text-[#5D8736]" width="32" height="32" />
             </div>
         </a>
 
         <!-- WhatsApp -->
         <a href="https://wa.me/6285198333523" target="_blank" rel="noopener noreferrer">
-            <div class="w-16 h-16 flex items-center justify-center bg-[#E3F89A] rounded-lg button-hover-effect hover:bg-[#D2E6A3]">
+            <div :class="['w-16 h-16 flex items-center justify-center rounded-lg button-hover-effect', animateButtons ? 'animate-wave-4 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
             <Icon icon="mdi:whatsapp" class="text-[#5D8736]" width="32" height="32" />
             </div>
         </a>
@@ -104,5 +107,38 @@ import { Icon } from "@iconify/vue"; // Import Iconify for icons
   }
 }
 
+/* Wave animation */
+@keyframes wave {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-wave-1 {
+  animation: wave 1s forwards;
+}
+
+.animate-wave-2 {
+  animation: wave 1s forwards;
+  animation-delay: 0.2s;
+}
+
+.animate-wave-3 {
+  animation: wave 1s forwards;
+  animation-delay: 0.4s;
+}
+
+.animate-wave-4 {
+  animation: wave 1s forwards;
+  animation-delay: 0.6s;
+}
+
+.active-wave {
+  background-color: #4C732E !important;
+  color: #E3F89A !important;
+}
 
 </style>

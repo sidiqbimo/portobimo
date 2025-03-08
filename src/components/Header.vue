@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import { Icon } from "@iconify/vue";
+import { useWaveAnimation } from "../composables/useWaveAnimation.js";
+
+const { startWaveAnimation } = useWaveAnimation();
 
 const isOpen = ref(false); // State for mobile menu
 const scrolledPastHero = ref(false); // State to track if scrolled past Hero
@@ -23,13 +26,54 @@ const handleScroll = () => {
   }
 };
 
+// Icons for animation
+const mobileIcons = [
+  { icon: "mynaui:letter-b-square-solid", color: "text-[#5D8736]" }, // B
+  { icon: "mynaui:letter-i-square-solid", color: "text-[#6B8E23]" }, // I
+  { icon: "mynaui:letter-m-square-solid", color: "text-[#A9C46C]" }, // M
+  { icon: "mynaui:letter-o-square-solid", color: "text-[#A9C46C]" }  // O
+];
+
+const mobileIcon = ref(mobileIcons[0].icon); // Default icon (B)
+const mobileColor = ref(mobileIcons[0].color);
+let iconIndex = 0;
+let iconInterval;
+
+// Function to cycle through icons
+const cycleIcons = () => {
+  iconInterval = setInterval(() => {
+    iconIndex = (iconIndex + 1) % mobileIcons.length;
+
+    mobileIcon.value = mobileIcons[iconIndex].icon;
+    mobileColor.value = mobileIcons[iconIndex].color;
+  }, 1200); // Change icon every 1s
+};
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
+  cycleIcons();
 });
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
+  clearInterval(iconInterval);
 });
+
+// When clicking Contact Me
+const showNotification = ref(false);
+
+const scrollToContact = () => {
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+
+    startWaveAnimation(); // Trigger wave animation when clicking "Contact"
+  }
+  showNotification.value = true;
+  setTimeout(() => {
+    showNotification.value = false;
+  }, 3000);
+};
 </script>
 
 <template>
@@ -37,10 +81,24 @@ onUnmounted(() => {
     
     <!-- Left: Logo -->
    <div class="flex gap-0.25">
-    <Icon icon="mynaui:letter-b-square-solid" class="w-10 h-10 text-[#5D8736]" />
-    <Icon icon="mynaui:letter-i-square-solid" class="w-10 h-10 text-[#6B8E23]" />
-    <Icon icon="mynaui:letter-m-square-solid" class="w-10 h-10 text-[#A9C46C]" />
-    <Icon icon="mynaui:letter-o-square-solid" class="w-10 h-10 text-[#A9C46C]" />
+      <!-- Desktop View: Show all icons -->
+      <div class="hidden md:flex gap-0.25">
+        <Icon icon="mynaui:letter-b-square-solid" class="w-10 h-10 text-[#5D8736]" />
+        <Icon icon="mynaui:letter-i-square-solid" class="w-10 h-10 text-[#6B8E23]" />
+        <Icon icon="mynaui:letter-m-square-solid" class="w-10 h-10 text-[#A9C46C]" />
+        <Icon icon="mynaui:letter-o-square-solid" class="w-10 h-10 text-[#A9C46C]" />
+      </div>
+
+      <!-- Mobile View: Show One Icon at a Time -->
+      <div class="relative w-10 h-10 md:hidden">
+        <transition name="fade">
+          <Icon 
+            :icon="mobileIcon"
+            :key="mobileIcon"  
+            :class="['absolute inset-0 w-10 h-10', mobileColor]"
+          />
+        </transition>
+      </div>
   </div>
 
     <!-- Middle: Responsive Line -->
@@ -48,10 +106,17 @@ onUnmounted(() => {
 
     <!-- Right: Desktop Navigation (Hidden on Mobile) -->
     <nav class="hidden md:flex gap-8">
-      <a href="#about" class="text-[#A9C46C] text-base font-bold underline hover:font-extrabold duration-300 ease-in-out">ABOUT ME</a>
-      <a href="mailto:sidiqbimop@gmail.com" class="text-[#A9C46C] text-base font-bold underline hover:font-extrabold duration-300 ease-in-out">CONTACT</a>
-      <a href="https://drive.google.com/file/d/1EoECKlZepn9ImgItemapVRGBzPHGY4Nb/view?usp=sharing" class="text-[#5D8736] text-base font-bold underline hover:font-extrabold transition-all">MY RESUME</a>
+      <!-- <a href="#about" class="text-[#A9C46C] text-base font-['Lato'] underline hover:font-black hover:text-lg duration-300 ease-in-out">ABOUT ME</a> -->
+      <a @click.prevent="scrollToContact" class="text-[#A9C46C] text-base font-bold font-['Lato'] underline hover:font-black hover:text-lg hover:cursor-pointer duration-300 ease-in-out">CONTACT</a>
+      <a href="https://drive.google.com/file/d/1EoECKlZepn9ImgItemapVRGBzPHGY4Nb/view?usp=sharing" class="text-[#5D8736] text-base font-['Lato'] font-bold underline hover:font-black hover:text-lg transition-all">MY RESUME</a>
     </nav>
+    
+    <!-- Notification Pop-up -->
+    <transition name="slide-up">
+      <div v-if="showNotification" class="font-['Lato'] fixed bottom-0 left-0 right-0 bg-[#5D8736] text-white text-center py-2 text-xl">
+        I'm just a message away, let's talk! 😁👆
+      </div>
+    </transition>
 
     <!-- Mobile Menu Button (Visible on Small Screens) -->
     <button class="md:hidden" @click="toggleMenu">
@@ -69,8 +134,9 @@ onUnmounted(() => {
         v-if="isOpen" 
         class="absolute top-16 left-0 w-full bg-[#F8FFE0] flex flex-col items-center gap-4 py-4 shadow-md md:hidden"
       >
-        <a href="#about" class="text-[#A9C46C] text-lg font-bold hover:underline" @click="toggleMenu">ABOUT ME</a>
-        <a href="#contact" class="text-[#A9C46C] text-lg font-bold hover:underline" @click="toggleMenu">CONTACT</a>
+       <!-- <a href="#about" class="text-[#A9C46C] text-base font-['Lato'] underline hover:font-extrabold duration-300 ease-in-out">ABOUT ME</a> -->
+      <a @click.prevent="scrollToContact" class="text-[#A9C46C] text-base font-bold font-['Lato'] underline hover:font-extrabold hover:cursor-pointer duration-300 ease-in-out">CONTACT</a>
+      <a href="https://drive.google.com/file/d/1EoECKlZepn9ImgItemapVRGBzPHGY4Nb/view?usp=sharing" class="text-[#5D8736] text-base font-['Lato'] font-bold underline hover:font-extrabold transition-all">MY RESUME</a>
       </div>
     </transition>
 
@@ -131,5 +197,24 @@ onUnmounted(() => {
 .slide-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+/* Animation of Notification Pop-up */
+/* Slide-Up Animation */
+.slide-up-enter-active, .slide-up-leave-active {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.slide-up-enter-from, .slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/* Logo changing animation on mobile */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.6s ease-in-out;
+  position: absolute; /* Ensure the letters overlap */
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>
