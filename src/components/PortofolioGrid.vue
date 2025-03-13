@@ -73,26 +73,33 @@ const projects = [
 </script>
 
 <template>
- <section class="px-[54px] pl-[64px] py-4 bg-[#F8FFE0]">
+ <section class="px-[24px] md:px-[54px] py-4 bg-[#F8FFE0]">
 
-    <!-- Line and Heading -->
+    <!-- Mobile: Heading on Top -->
+    <div class="block md:hidden text-center text-[#6B8E23] text-xl font-normal mt-6 mb-4 w-full">
+        Selected Works
+    </div>
+
     <div class="relative flex">
-        <div class="relative flex-shrink-0 max-w-8">
-            <div class="absolute left-0 top-0 w-[1px] bg-[#A9C46C] h-full"></div>
+        <!-- Desktop: Vertical Line & Rotated Heading -->
+        <div class="hidden md:block relative flex-shrink-0 max-w-8">
+            <div class="absolute left-0 top-0 w-[1px] bg-[#A9C46C] h-full"></div> <!-- ✅ Restored the vertical line -->
             <div 
-            class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-16 text-[#6B8E23] text-xl font-normal tracking-wide rotate-[-90deg] origin-center whitespace-nowrap sticky top-40 bg-[#F8FFE0] px-2 w-max h-max flex items-center justify-center" style="font-family: 'Lato';">
+              class="absolute top-0 left-1/2 transform -translate-x-1/2 mt-16 text-[#6B8E23] text-xl font-normal tracking-wide rotate-[-90deg] origin-center whitespace-nowrap sticky top-40 bg-[#F8FFE0] px-2 w-max h-max flex items-center justify-center"
+              style="font-family: 'Lato';">
                 Selected Works
             </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="max-w-[1701px] mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+            <PortfolioCard
+              v-for="(project, index) in projects"
+              :key="index"
+              v-bind="project"
+            />
+        </div>
     </div>
-    
-    <!-- Grids -->
-    <div class="max-w-[1701px] mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
-      <PortfolioCard
-        v-for="(project, index) in projects"
-        :key="index"
-        v-bind="project"
-      />
-    </div>
-    </div>
+
   </section>
 </template>

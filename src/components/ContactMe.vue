@@ -6,54 +6,65 @@ const { animateButtons } = useWaveAnimation();
 </script>
 
 <template>
-  <section id="contact" class="flex justify-center items-center px-[54px] pt-8 pb-16">
-    <div class="w-full max-w-[1776px] h-auto px-[72px] py-[80px] bg-transparent rounded-2xl border-container flex flex-col justify-center items-center">
+  <section id="contact" class="flex justify-center items-center px-[24px] md:px-[54px] pt-8 pb-16">
+    <div class="w-full md:max-w-[1776px] h-88 md:h-auto px-[24px] md:px-[72px] py-[0px] md:py-[80px] bg-transparent rounded-2xl border-container flex flex-col justify-center items-center">
       
       <!-- Title -->
-      <h2 class="text-center text-[#6B8E23] text-[40px] font-normal leading-[40px] mt-24 mb-1" style="font-family: 'Palanquin Dark', sans-serif;">
-        UX in Mind, Code at Heart 💚
+      <h2 class="text-center text-[#6B8E23] text-[24px] md:text-[40px] font-normal leading-6 md:leading-[40px] mt-24 mb-1" style="font-family: 'Palanquin Dark', sans-serif;">
+        UX in Mind,<br class="block md:hidden" /> Code at Heart 💚
       </h2>
 
       <!-- Subtitle -->
-      <p class="text-center text-[#6D6D6D] text-[20px] font-normal font-['Lato']">
+      <p class="text-center text-[#6D6D6D] text-[16px] md:text-[20px] font-normal font-['Lato']">
         Have an idea? Let’s make it real!
       </p>
 
       <!-- Buttons Section -->
-      <div class="flex justify-center items-center gap-4 mt-4 mb-24">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4 mb-24 md:w-full">
         
         <!-- Talk to Bimo Button -->
-        <button :class="['flex items-center gap-2 px-6 py-4 rounded-lg button-hover-effect', animateButtons ? 'animate-wave-1 active-wave' : 'bg-[#5D8736] hover:bg-[#4C732E]']">
+        <button :class="['w-full max-w-[300px] md:w-auto flex items-center gap-2 px-4 py-3 md:px-6 md:py-4 rounded-lg button-hover-effect', animateButtons ? 'animate-wave-1 active-wave' : 'bg-[#5D8736] hover:bg-[#4C732E]']">
 
             <a href="mailto:sidiqbimop@gmail.com" class="flex items-center gap-2">
-          <Icon icon="mdi:email" class="text-[#E3F89A]" width="32" height="32" />
-          <span class="text-[#E3F89A] text-[20px] font-normal leading-0" style="font-family: 'Palanquin Dark', sans-serif;">Talk to Bimo</span>
+          <Icon icon="mdi:email" class="text-[#E3F89A] w-[20px] h-[20px] md:w-[32px] md:h-[32px] " />
+          <span class="text-[#E3F89A] text-[20px] md:text-[20px] font-normal leading-0" style="font-family: 'Palanquin Dark', sans-serif;">Talk to Bimo</span>
           </a>
 
         </button>
 
         <!-- Social Media Icons -->
-        <div class="flex gap-3">
+        <div class="grid grid-cols-2 md:flex gap-2 w-full max-w-[300px]">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6285198333523" target="_blank" rel="noopener noreferrer">
+            <div :class="['w-full h-12 flex items-center justify-center rounded-lg button-hover-effect md:w-16 md:h-16', animateButtons ? 'animate-wave-4 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
+            <Icon icon="mdi:whatsapp" class="text-[#5D8736]" width="32" height="32" />
+            </div>
+        </a>
+
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/sidiqbimo" target="_blank" rel="noopener noreferrer">
-            <div :class="['w-16 h-16 flex items-center justify-center rounded-lg button-hover-effect', animateButtons ? 'animate-wave-2 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
+            <div :class="['w-full h-12 flex items-center justify-center rounded-lg button-hover-effect md:w-16 md:h-16', animateButtons ? 'animate-wave-2 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
             <Icon icon="mdi:linkedin" class="text-[#5D8736]" width="32" height="32" />
             </div>
         </a>
 
         <!-- Dribbble -->
         <a href="https://dribbble.com/sidiqbheem" target="_blank" rel="noopener noreferrer">
-            <div :class="['w-16 h-16 flex items-center justify-center rounded-lg button-hover-effect', animateButtons ? 'animate-wave-3 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
+            <div :class="['w-full h-12 flex items-center justify-center rounded-lg button-hover-effect md:w-16 md:h-16', animateButtons ? 'animate-wave-3 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
             <Icon icon="icon-park-solid:dribble" class="text-[#5D8736]" width="32" height="32" />
             </div>
         </a>
 
-        <!-- WhatsApp -->
-        <a href="https://wa.me/6285198333523" target="_blank" rel="noopener noreferrer">
-            <div :class="['w-16 h-16 flex items-center justify-center rounded-lg button-hover-effect', animateButtons ? 'animate-wave-4 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
-            <Icon icon="mdi:whatsapp" class="text-[#5D8736]" width="32" height="32" />
+        
+        <!-- GitHub -->
+        <a href="https://github.com/sidiqbimo" target="_blank" rel="noopener noreferrer">
+            <div :class="['w-full h-12 flex items-center justify-center rounded-lg button-hover-effect md:w-16 md:h-16', animateButtons ? 'animate-wave-3 active-wave' : 'bg-[#E3F89A] hover:bg-[#D2E6A3]']">
+            <Icon icon="octicon:mark-github-16" class="text-[#5D8736]" width="32" height="32" />
             </div>
         </a>
+
+        
         </div>
 
 

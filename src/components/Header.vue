@@ -12,6 +12,8 @@ const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
 
+
+
 const handleScroll = () => {
   const heroHeight = document.querySelector('.hero').offsetHeight;
   scrolledPastHero.value = window.scrollY > heroHeight;
