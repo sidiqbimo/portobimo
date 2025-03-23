@@ -1,5 +1,6 @@
 <script setup>
 import PortfolioCard from "./PortofolioCard.vue";
+import NewPortofolioCard from "./NewPortofolioCard.vue";
 const grid1 = "/images/famcare.png";
 const grid2 = "/images/jogjis.png";
 const grid3 = "/images/setara.png";
@@ -22,6 +23,8 @@ const projects = [
       categoryConfig.uiux
     ],
     description: "Caring made smarter—Real-time health monitoring and emergency alerts, anytime, anywhere.",
+    prototypeLink: "https://www.figma.com/design/F6IOn1hKhRHqj6XMzoUb7b/Famcare----Bimo's-Portfolio?node-id=2-1062&t=1ySmGdkEraMeDNOi-1", // ✅ Add this
+    designJourneyLink: "https://drive.google.com/file/d/1dmT62qD98DN00wpij1j1mPWpZXVF_rks/view?usp=sharing", // ✅ Optional
   },
   {
     imageSrc: grid2,
@@ -31,6 +34,7 @@ const projects = [
       categoryConfig.uiux
     ],
     description: "Tourism, public services, and city updates, all in one smart app for locals and visitors.",
+    prototypeLink: "https://www.figma.com/design/aSlDXnMyUjWgn7XKFUAePg/Jogja-Istimewa---Bimo's-Portfolio?node-id=0-1&t=vndn5O42JFmYLj6g-1", // ✅ Add this
   },
   {
     imageSrc: grid3,
@@ -40,6 +44,7 @@ const projects = [
       categoryConfig.mobile
     ],
     description: "Banking without barriers—an inclusive digital experience for everyone, by design.",
+    prototypeLink: "https://github.com/sidiqbimo/bcaRevamp-app", // ✅ Add this
   },
   {
     imageSrc: grid4,
@@ -49,6 +54,7 @@ const projects = [
       categoryConfig.uiux
     ],
     description: "Powering smarter decisions—connecting companies with engaged surveyors for reliable insights.",
+    prototypeLink: "https://www.figma.com/design/1rkTBnb99c9Wqmn4r8RzFd/SurveyScout----Bimo's-Portfolio?node-id=0-1&t=btvFMXH4q3mna9m3-1",
   },
   {
     imageSrc: grid5,
@@ -59,6 +65,8 @@ const projects = [
       categoryConfig.web
     ],
     description: "An engaging landing page with compelling visuals and an optimized user journey, driving conversions.",
+    prototypeLink: "https://asteria-web-nu.vercel.app/", // ✅ Add this
+    designJourneyLink: "https://www.figma.com/design/pteTjFrTtuORFkEu3erQ8V/Asteria---Bimo's-Portfolio?node-id=0-1&t=6q9pl5WauWCpc1Pg-1", // ✅ Optional
   },
   {
     imageSrc: grid6,
@@ -68,6 +76,7 @@ const projects = [
       categoryConfig.uiux
     ],
     description: "AI-powered survey platform connecting researchers with engaged respondents, faster than ever.",
+    prototypeLink: "https://www.figma.com/design/SMG2uvPo74jyWefPgDbWok/BeMySample---Bimo's-Portfolio?node-id=0-1&t=7Y81wSAcHD252U88-1",
   },
 ];
 </script>
@@ -90,10 +99,11 @@ const projects = [
                 Selected Works
             </div>
         </div>
-
+        
+        <!-- // TO BE CHANGED!!! -->
         <!-- Project Grid -->
         <div class="max-w-[1701px] mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
-            <PortfolioCard
+            <NewPortofolioCard
               v-for="(project, index) in projects"
               :key="index"
               v-bind="project"
