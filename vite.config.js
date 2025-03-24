@@ -8,4 +8,9 @@ export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'), // This makes @ point to /src
+    },
+  },
 })
