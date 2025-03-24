@@ -3,9 +3,12 @@ import Header from "./components/Header.vue";
 import Hero from "./components/Hero.vue";
 import PortfolioGrid from "./components/PortofolioGrid.vue";
 import ContactMe from "./components/ContactMe.vue";
+
+import { Analytics } from '@vercel/analytics/vue';
 </script>
 
 <template>
+  <Analytics />
   <div>
     <Header />
     <Hero class="hero mt-2" />
