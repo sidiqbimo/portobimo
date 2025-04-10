@@ -110,7 +110,7 @@ const scrollToContact = () => {
     <nav class="hidden md:flex gap-8">
       <!-- <a href="#about" class="text-[#A9C46C] text-base font-['Lato'] underline hover:font-black hover:text-lg duration-300 ease-in-out">ABOUT ME</a> -->
       <a @click.prevent="scrollToContact" class="text-[#A9C46C] text-base font-bold font-['Lato'] underline hover:font-black hover:text-lg hover:cursor-pointer duration-300 ease-in-out">CONTACT</a>
-      <a href="https://drive.google.com/file/d/1EoECKlZepn9ImgItemapVRGBzPHGY4Nb/view?usp=sharing" class="text-[#5D8736] text-base font-['Lato'] font-bold underline hover:font-black hover:text-lg transition-all">MY RESUME</a>
+      <a href="https://drive.google.com/drive/folders/1sZKWVruySKDAxTh5Tpl1gkYe8IJL9TgL?usp=drive_link" class="text-[#5D8736] text-base font-['Lato'] font-bold underline hover:font-black hover:text-lg transition-all">MY RESUME</a>
     </nav>
     
     <!-- Notification Pop-up -->
