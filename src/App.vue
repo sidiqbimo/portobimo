@@ -45,27 +45,45 @@ function closeGreeting() {
   <!-- Fullscreen Greeting Overlay -->
   <Motion
     v-if="showGreeting"
-    :initial="{ opacity: 0, scale: 0.95, y: 40 }"
-    :animate="{ opacity: 1, scale: 1, y: 0 }"
-    :exit="{ opacity: 0, scale: 0.95, y: 40 }"
+    :initial="{
+      opacity: 0,
+      y: isMobile ? 100 : 40,
+      scale: isMobile ? 1 : 0.95,
+    }"
+    :animate="{ opacity: 1, y: 0, scale: 1 }"
+    :exit="{ opacity: 0, y: isMobile ? 100 : 40, scale: isMobile ? 1 : 0.95 }"
     :transition="{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }"
-    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/10"
-    style="backdrop-filter: blur(4px)"
+    :class="[
+      'fixed inset-0 z-50 flex items-center justify-center',
+      isMobile ? 'items-end bg-black/40' : 'bg-black/40',
+    ]"
+    style="backdrop-filter: blur(8px)"
   >
     <Motion
-      :initial="{ opacity: 0, scale: 0.9, y: 40 }"
-      :animate="{ opacity: 1, scale: 1, y: 0 }"
-      :exit="{ opacity: 0, scale: 0.9, y: 40 }"
+      :initial="{
+        opacity: 0,
+        y: isMobile ? 100 : 40,
+        scale: isMobile ? 1 : 0.9,
+      }"
+      :animate="{ opacity: 1, y: 0, scale: 1 }"
+      :exit="{ opacity: 0, y: isMobile ? 100 : 40, scale: isMobile ? 1 : 0.9 }"
       :transition="{ duration: 1, delay: 0.2, ease: [0.4, 0, 0.2, 1] }"
-      class="bg-white/90 rounded-2xl shadow-2xl p-10 flex flex-col items-center max-w-lg w-full mx-4 shadow-lg shadow-black/40"
+      :class="[
+        'shadow-2xl flex flex-col items-center w-full',
+        isMobile
+          ? 'rounded-t-2xl bg-white/90 backdrop-blur-lg p-8 max-w-lg mx-auto'
+          : 'bg-white/90 backdrop-blur-lg rounded-2xl p-10 max-w-lg w-full mx-4',
+      ]"
     >
       <h1
-        class="text-4xl font-bold text-[#6B8E23] mb-4 items-center justify-center text-center"
+        class="text-2xl md:text-4xl font-bold text-[#6B8E23] mb-4 text-center"
         style="font-family: 'Palanquin Dark', sans-serif"
       >
-        Welcome, {{ recruiterInfo?.company }} Team!
+        Hi, {{ recruiterInfo?.company }} Team! 👋
       </h1>
-      <p class="text-lg text-[#5d8736] mb-8 text-center font-['Lato']">
+      <p
+        class="text-base md:text-lg text-[#5d8736] mb-8 text-center font-['Lato']"
+      >
         Explore my portfolio and discover how I can contribute to your team
       </p>
       <button
