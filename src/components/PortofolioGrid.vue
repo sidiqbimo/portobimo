@@ -44,7 +44,7 @@ const projects = [
     prototypeLink:
       "https://www.figma.com/design/F6IOn1hKhRHqj6XMzoUb7b/Famcare----Bimo's-Portfolio?node-id=2-1062&t=1ySmGdkEraMeDNOi-1", // ✅ Add this
     designJourneyLink:
-      "https://drive.google.com/file/d/1dmT62qD98DN00wpij1j1mPWpZXVF_rks/view?usp=sharing", // ✅ Optional
+      "https://drive.google.com/file/d/1m3jwtuPVbkOK32IM3urB-efwlHtEpLfD/view?usp=drive_link", // ✅ Optional
   },
   {
     imageSrc: grid2,
@@ -56,6 +56,8 @@ const projects = [
       "Tourism, public services, and city updates, all in one smart app for locals and visitors.",
     prototypeLink:
       "https://www.figma.com/design/aSlDXnMyUjWgn7XKFUAePg/Jogja-Istimewa---Bimo's-Portfolio?node-id=0-1&t=vndn5O42JFmYLj6g-1", // ✅ Add this
+    designJourneyLink:
+      "https://drive.google.com/drive/folders/1eyMbZaxCowbBr9A1ddaU7l8kLtPhidp-?usp=sharing",
   },
   {
     imageSrc: grid3,
