@@ -57,7 +57,7 @@ const projects = [
     prototypeLink:
       "https://www.figma.com/design/aSlDXnMyUjWgn7XKFUAePg/Jogja-Istimewa---Bimo's-Portfolio?node-id=0-1&t=vndn5O42JFmYLj6g-1", // ✅ Add this
     designJourneyLink:
-      "https://drive.google.com/drive/folders/1eyMbZaxCowbBr9A1ddaU7l8kLtPhidp-?usp=sharing",
+      "https://drive.google.com/file/d/1Ka-gaRUf81OPkcY9DdcI-oUSONMFBPrc/view?usp=drive_link",
   },
   {
     imageSrc: grid3,
