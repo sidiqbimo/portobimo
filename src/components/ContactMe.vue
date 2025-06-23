@@ -10,7 +10,7 @@ const { particlesContainer } = useContactAnimation();
 <template>
   <section
     id="contact"
-    class="relative flex justify-center items-center px-[24px] md:px-[54px] pt-8 pb-16 overflow-hidden"
+    class="relative flex justify-center items-center px-[24px] md:px-[54px] pt-4 pb-16 overflow-hidden"
   >
     <!-- Particles Background -->
     <div id="particles-js" class="absolute inset-0 z-0"></div>
