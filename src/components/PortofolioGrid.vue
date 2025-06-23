@@ -67,7 +67,7 @@ const projects = [
     categories: [categoryConfig.mobile],
     description:
       "Banking without barriers—an inclusive digital experience for everyone, by design.",
-    prototypeLink: "https://github.com/sidiqbimo/bcaRevamp-app", // ✅ Add this
+    githubLink: "https://github.com/sidiqbimo/bcaRevamp-app", // ✅ Add this
   },
   {
     imageSrc: grid4,
@@ -88,8 +88,8 @@ const projects = [
     categories: [categoryConfig.uiux, categoryConfig.web],
     description:
       "An engaging landing page with compelling visuals and an optimized user journey, driving conversions.",
-    prototypeLink: "https://asteria-web-nu.vercel.app/", // ✅ Add this
-    designJourneyLink:
+    liveDemoLink: "https://asteria-web-nu.vercel.app/", // ✅ Add this
+    prototypeLink:
       "https://www.figma.com/design/pteTjFrTtuORFkEu3erQ8V/Asteria---Bimo's-Portfolio?node-id=0-1&t=6q9pl5WauWCpc1Pg-1", // ✅ Optional
   },
   {
@@ -107,7 +107,7 @@ const projects = [
 </script>
 
 <template>
-  <section class="px-[24px] md:px-[54px] py-4 bg-[#F8FFE0]">
+  <section class="px-[24px] md:px-[54px] pt-4 pb-12 bg-[#F8FFE0]">
     <!-- Mobile: Heading on Top -->
     <div
       class="block md:hidden text-center text-[#6B8E23] text-xl font-normal mt-6 mb-4 w-full"
