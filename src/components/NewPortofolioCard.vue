@@ -93,7 +93,7 @@ const showOverlay = ref(false);
       class="flex flex-col md:flex-row justify-between md:items-center mt-4 mx-4 leading-8"
     >
       <h2
-        class="text-[#6B8E23] text-[32px] text-center md:text-left"
+        class="text-[#6B8E23] text-[32px] text-center md:text-left title-truncate"
         style="font-family: 'Palanquin Dark', sans-serif"
       >
         {{ title }}
@@ -119,7 +119,7 @@ const showOverlay = ref(false);
 
     <!-- Description -->
     <p
-      class="text-[#6D6D6D] text-[16px] font-normal font-['Lato'] mt-2 mx-4 leading-[18px] text-center md:text-left"
+      class="text-[#6D6D6D] text-[16px] font-normal font-['Lato'] mt-2 mx-4 leading-[18px] text-center md:text-left description-truncate"
     >
       {{ description }}
     </p>
@@ -194,5 +194,21 @@ const showOverlay = ref(false);
 .card-hover:hover h2 {
   color: #5d8736;
   transition: color 0.3s ease;
+}
+
+.description-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: calc(1.4em * 2); /* fallback for non-webkit browsers */
+}
+
+.title-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>
