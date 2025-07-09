@@ -7,12 +7,13 @@
     ]"
   >
     <div class="flex flex-col items-center">
-
       <h2
-        class="mb-16 text-2xl md:text-3xl font-bold text-[#5D8736] text-center"
-        style="font-family: 'Palanquin Dark', sans-serif;"
+        class="mb-16 text-2xl pl-2 pr-2 md:text-3xl font-bold text-[#5D8736] text-center break-words"
+        style="font-family: 'Palanquin Dark', sans-serif"
       >
-        Welcome to Bimo's portfolio <span class="inline-block animate-wave">👋</span>
+        Welcome to
+        <br class="block md:hidden" />
+        Bimo's portfolio
       </h2>
 
       <div
