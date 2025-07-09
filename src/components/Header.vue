@@ -154,7 +154,7 @@ const scrollToContact = () => {
    position: absolute;
    bottom: 0;
    left: 0;
-   height: 3px;
+   height: 4px;
    background-color: #A9C46C;
    animation: draw-border 1s ease-in-out forwards;
 }

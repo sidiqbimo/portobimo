@@ -2,6 +2,8 @@
 import PortfolioCard from "./PortofolioCard.vue";
 import NewPortofolioCard from "./NewPortofolioCard.vue";
 import { useScrollAnimation } from "../composables/useScrollAnimation";
+import { watch } from "vue";
+
 const grid1 = "/images/famcare.png";
 const grid2 = "/images/jogjis.png";
 const grid3 = "/images/setara.png";
@@ -30,7 +32,22 @@ const categoryConfig = {
   },
 };
 
+const props = defineProps({ pageLoaded: Boolean });
 const { visibleCards, observeElement } = useScrollAnimation();
+
+watch(
+  () => props.pageLoaded,
+  (loaded) => {
+    if (loaded) {
+      // Now it's safe to observe elements for animation
+      // This will trigger the fadeInUp animation for each card
+      // (If you use IntersectionObserver, you can (re)initialize it here)
+      // If you already call observeElement in the template, that's fine,
+      // just make sure the animation classes depend on visibleCards as you do now.
+    }
+  },
+  { immediate: true }
+);
 
 const projects = [
   {
@@ -139,7 +156,7 @@ const projects = [
           :ref="(el) => observeElement(el, index)"
           :class="[
             'transition-all duration-700',
-            visibleCards.has(index)
+            visibleCards.has(index) && pageLoaded
               ? 'animate__animated animate__fadeInUp opacity-100'
               : 'opacity-0 translate-y-8',
           ]"

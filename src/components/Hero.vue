@@ -1,23 +1,28 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 
 // Animation states
 const showGreeting = ref(false);
 const showHand = ref(false);
 const showSubtext = ref(false);
+const props = defineProps({ pageLoaded: Boolean });
 
-onMounted(() => {
-  // Start animation sequence
-  setTimeout(() => {
-    showGreeting.value = true;
+watch(
+  () => props.pageLoaded,
+  (loaded) => {
+    if (loaded) {
+      setTimeout(() => {
+        showGreeting.value = true;
+        setTimeout(() => {
+          showHand.value = true;
+          showSubtext.value = true;
+        }, 500);
+      }, 0);
+    }
+  },
+  { immediate: true }
+);
 
-    // Show hand after greeting animation completes (1s delay)
-    setTimeout(() => {
-      showHand.value = true;
-      showSubtext.value = true;
-    }, 500);
-  }, 0);
-});
 </script>
 
 <template>

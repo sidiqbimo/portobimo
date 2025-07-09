@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import { Motion } from "@motionone/vue";
 import Header from "./components/Header.vue";
 import Hero from "./components/Hero.vue";
@@ -7,6 +7,8 @@ import PortfolioGrid from "./components/PortofolioGrid.vue";
 import ContactMe from "./components/ContactMe.vue";
 
 import { Analytics } from "@vercel/analytics/vue";
+
+import FullPageLoader from "./components/FullPageLoader.vue";
 
 const isMobile = ref(false);
 
@@ -34,13 +36,70 @@ onMounted(() => {
   window.addEventListener("resize", checkMobile);
 });
 
+const loaderVisible = ref(true);
+const loaderProgress = ref(0);
+let loaderTimeout;
+const pageLoaded = ref(false);
+
+watch(loaderVisible, (val) => {
+  if (!val) {
+    pageLoaded.value = true;
+  }
+});
+
+function simulateProgress() {
+  // Simulate loading progress (replace with real logic if needed)
+  if (loaderProgress.value < 80) {
+    loaderProgress.value += Math.random() * 10;
+    setTimeout(simulateProgress, 300);
+  }
+}
+
+onMounted(() => {
+  simulateProgress();
+
+  // Hide loader when progress >= 80% or after 10s
+  const checkLoader = setInterval(() => {
+    if (loaderProgress.value >= 80) {
+      loaderVisible.value = false;
+      clearInterval(checkLoader);
+      clearTimeout(loaderTimeout);
+    }
+  }, 200);
+
+  loaderTimeout = setTimeout(() => {
+    loaderVisible.value = false;
+    clearInterval(checkLoader);
+  }, 10000); // 10 seconds
+});
+
 function closeGreeting() {
   showGreeting.value = false;
 }
+
+onMounted(() => {
+  simulateProgress();
+
+  // Hide loader when progress >= 80% or after 10s
+  const checkLoader = setInterval(() => {
+    if (loaderProgress.value >= 80) {
+      loaderVisible.value = false;
+      clearInterval(checkLoader);
+      clearTimeout(loaderTimeout);
+    }
+  }, 200);
+
+  loaderTimeout = setTimeout(() => {
+    loaderVisible.value = false;
+    clearInterval(checkLoader);
+  }, 10000); // 10 seconds
+});
 </script>
 
 <template>
   <Analytics />
+
+  <FullPageLoader :show="loaderVisible" :progress="Math.min(loaderProgress, 100)" />
 
   <!-- Fullscreen Greeting Overlay -->
   <Motion
@@ -97,11 +156,11 @@ function closeGreeting() {
 
   <div>
     <Header />
-    <Hero class="hero mt-2" />
+    <Hero class="hero mt-2" :page-loaded="pageLoaded" />
     <main class="flex items-center justify-center bg-[#F8FFE0]">
-      <PortfolioGrid />
+      <PortfolioGrid :page-loaded="pageLoaded" />
     </main>
-    <ContactMe class="bg-[#F8FFE0]" />
+    <ContactMe class="bg-[#F8FFE0]" :page-loaded="pageLoaded" />
   </div>
 </template>
 

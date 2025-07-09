@@ -2,9 +2,24 @@
 import { Icon } from "@iconify/vue";
 import { useWaveAnimation } from "../composables/useWaveAnimation";
 import { useContactAnimation } from "../composables/useContactAnimation";
+import { watch } from "vue";
 
 const { animateButtons } = useWaveAnimation();
 const { particlesContainer } = useContactAnimation();
+const props = defineProps({ pageLoaded: Boolean });
+
+watch(
+  () => props.pageLoaded,
+  (loaded) => {
+    if (loaded) {
+      // Call your animation functions here
+      animateButtons();
+      // If you have other entrance animations, trigger them here
+    }
+  },
+  { immediate: true }
+);
+
 </script>
 
 <template>
@@ -33,7 +48,7 @@ const { particlesContainer } = useContactAnimation();
         <img
           src="/images/green-heart_1f49a.png"
           alt="Green heart"
-          class="animate__animated animate__heartBeat animate__slow animate__infinite inline-block mb-1 ml-1 w-5 h-auto md:w-[32px] md:h-auto"
+          class="animate__animated animate__heartBeat animate__slo`w` animate__infinite inline-block mb-1 ml-1 w-5 h-auto md:w-[32px] md:h-auto"
         />
       </h2>
 
